@@ -51,9 +51,9 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
 				if(newState == 0) {
 	        if(ytplayer) {
 						
-						var currentVideoID = ytplayer.getVideoUrl().match(/v=([0-9a-zA-Z]+)/);
-						$.getJSON("/static/next_video.json?video_id="+currentVideoID[1], function(json) {
-						   ytplayer.loadVideoById(json.videos[1].unique_id);
+						//var currentVideoID = ytplayer.getVideoUrl().match(/v=([0-9a-zA-Z]+)/);
+						$.getJSON("/static/next_video.json?video_url="+ytplayer.getVideoUrl(), function(json) {
+						   ytplayer.loadVideoById(json.unique_id);
 						});
 	        }
 				}
@@ -62,39 +62,25 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
       // The "main method" of this sample. Called when someone clicks "Run".
       function loadPlayer() {
         // The video to load
-        var videoID = "ylLzyHk54Z0"
+
+        var videoID = "I-_knXDjWC0"
         // Lets Flash from another domain call JavaScript
         var params = { allowScriptAccess: "always" };
         // The element id of the Flash embed
         var atts = { id: "ytPlayer" };
         // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
         swfobject.embedSWF("http://www.youtube.com/v/" + videoID + 
-                           "?version=3&autoplay=1&enablejsapi=1&modestbranding=1&playerapiid=player1", 
-                           "videoDiv", "480", "295", "9", null, null, params, atts);
+                           "?version=3&autoplay=1&cc_load_policy=1&enablejsapi=1&fs=1&modestbranding=1&rel=0&showinfo=0&autohide=1&color=white&iv_load_policy=3&theme=light&playerapiid=player1", 
+                           "videoDiv", "960", "540", "9", null, null, params, atts);
       }
+
       function _run() {
         loadPlayer();
       }
       google.setOnLoadCallback(_run);
     </script>
   </head>
-  <body style="font-family: Arial;border: 0 none;">
-    <table>
-    <tr>
-    <td><div id="videoDiv">Loading...</div></td>
-    <td valign="top">
-      <div id="videoControls">
-        <p>Select a video to load:</p>
-        <select id="videoSelection" onchange="loadVideo();">
-          <option value="ylLzyHk54Z0" selected>YouTube API Overview</option>
-          <option value="muLIPWjks_M">Ninja Cat</option>
-          <option value="GMUlhuTkM3w">Beatboxing Flute</option>
-        </select>
-      </div>
-    </td></tr>
-    </table>
-		<%  @client.videos.each do |video|%>
-			<%= video.unique_id %>
-		<% end %>
+  <body style="text-align:center;">
+    <div id="videoDiv">Loading...</div>
   </body>
 </html>
