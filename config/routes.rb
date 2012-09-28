@@ -2,6 +2,7 @@ YoutubeTv::Application.routes.draw do
   devise_for :users
 
   get "static/home"
+  get "static/next_video"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -35,6 +35,9 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
         var selectBox = document.getElementById("videoSelection");
         var videoID = selectBox.options[selectBox.selectedIndex].value
         
+				var videoID = getParam(ytplayer.getVideoUrl(), "v");
+				alert(videoID);
+				
         if(ytplayer) {
           ytplayer.loadVideoById(videoID);
         }
@@ -55,18 +58,29 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
 			function onytplayerStateChange(newState) {
 				if(newState == 0) {
 	        if(ytplayer) {
+						var videoID = getParam(ytplayer.getVideoUrl(), "v");
+						alert(videoID);
+						var results = $.getJSON("/static/next_video?video_id"+ytplayer.getVideoUrl());
+						
+		
 	          ytplayer.loadVideoById("GMUlhuTkM3w");
 	        }
 				}
 			}
-
-			function cueVideo(){
-				var selectBox = document.getElementById("videoSelection");
-        var videoID = selectBox.options[selectBox.selectedIndex].value
-        
-        if(ytplayer) {
-          ytplayer.cueVideoById(videoID);
-        }
+			
+			//get videoID from videoURL
+			function getParam ( url, sname )
+			{
+			  var params = url.search.substr(url.search.indexOf("?")+1);
+			  var sval = "";
+			  params = params.split("&");
+			    // split param and value into individual pieces
+			    for (var i=0; i<params.length; i++)
+			       {
+			         temp = params[i].split("=");
+			         if ( [temp[0]] == sname ) { sval = temp[1]; }
+			       }
+			  return sval;
 			}
       
       // The "main method" of this sample. Called when someone clicks "Run".
@@ -95,7 +109,7 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
     <td valign="top">
       <div id="videoControls">
         <p>Select a video to load:</p>
-        <select id="videoSelection" onchange="cueVideo();">
+        <select id="videoSelection" onchange="loadVideo();">
           <option value="ylLzyHk54Z0" selected>YouTube API Overview</option>
           <option value="muLIPWjks_M">Ninja Cat</option>
           <option value="GMUlhuTkM3w">Beatboxing Flute</option>
@@ -103,5 +117,8 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
       </div>
     </td></tr>
     </table>
+		<%  @client.videos.each do |video|%>
+			<%= video.unique_id %>
+		<% end %>
   </body>
 </html>
