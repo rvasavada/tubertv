@@ -1,14 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>YoutubeTv</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <style type="text/css">
+    #videoDiv { 
+      margin-right: 3px;
+    }
+    #videoInfo {
+      margin-left: 3px;
+    }
+  </style>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <script type="text/javascript">
+    google.load("swfobject", "2.1");
+  </script>    
+  <script type="text/javascript">
+    /*
+     * Change out the video that is playing
+     */
+    
+    // Loads the selected video into the player.
+    function loadVideo() {
+      var selectBox = document.getElementById("videoSelection");
+      var videoID = selectBox.options[selectBox.selectedIndex].value
+						
+      if(ytplayer) {
+        ytplayer.loadVideoById(videoID);
+      }
+    }
+    
+    // This function is called when an error is thrown by the player
+    function onPlayerError(errorCode) {
+      alert("An error occured of type:" + errorCode);
+    }
+    
+    // This function is automatically called by the player once it loads
+    function onYouTubePlayerReady(playerId) {
+      ytplayer = document.getElementById("ytPlayer");
+      ytplayer.addEventListener("onError", "onPlayerError");
+			ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+    }
+
+		function onytplayerStateChange(newState) {
+			if(newState == 0) {
+        if(ytplayer) {
+					
+					//var currentVideoID = ytplayer.getVideoUrl().match(/v=([0-9a-zA-Z]+)/);
+					$.getJSON("/static/next_video.json?video_url="+ytplayer.getVideoUrl(), function(json) {
+					   ytplayer.loadVideoById(json.unique_id);
+					});
+        }
+			}
+		}
+    
+    // The "main method" of this sample. Called when someone clicks "Run".
+    function loadPlayer() {
+      // The video to load
+
+      var videoID = "I-_knXDjWC0"
+      // Lets Flash from another domain call JavaScript
+      var params = { allowScriptAccess: "always" };
+      // The element id of the Flash embed
+      var atts = { id: "ytPlayer" };
+      // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+      swfobject.embedSWF("http://www.youtube.com/v/" + videoID + 
+                         "?version=3&autoplay=1&cc_load_policy=1&enablejsapi=1&fs=1&modestbranding=1&rel=0&showinfo=0&autohide=1&color=white&iv_load_policy=3&theme=light&playerapiid=player1", 
+                         "videoDiv", "960", "540", "9", null, null, params, atts);
+    }
+
+    function _run() {
+      loadPlayer();
+    }
+    google.setOnLoadCallback(_run);
+  </script>
 </head>
-<body>
+<body style="background:white; background-image:url(http://s.ytimg.com/yt/img/refresh/body_noise-vflp89Uii.png)">
+	<div class="navbar navbar-static-top">
+	  <div class="navbar-inner">
+			<div class="container">
+				<%= link_to "YouTubeTV", root_url, :class => "brand"%>
+				
+				<ul class="nav pull-right">
+					<% if user_signed_in? %>
+						<li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				          <%= current_user.email%>
+					          <b class="caret"></b>
+					    </a>
+					    <ul class="dropdown-menu">
+				        <li><%= link_to "Your Resume", "#" %></li>
+				        <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+				        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
+					    </ul>
+					  </li>
+	        
+		      <% else %>
+	        	<li><%= link_to "Sign up", new_user_registration_path %></li>				  	
+						<li class="divider-vertical"></li>
+		        <%= link_to "Sign in", new_user_session_path, :class => "btn btn-primary"%>
+		      <% end %>
+				</ul>
+			</div>
+	  </div>
+	</div>
 
-<%= yield %>
-
+	<div class="container" style="padding: 20px 30px 20px 30px;margin-top:20px;opacity: 1.0;background:white;-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);border-radius: 4px;-webkit-border-radius: 4px;box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);">		
+	 <!-- <% flash.each do |name, msg| %>
+			<div class="alert alert-success">
+		    	<button type="button" class="close" data-dismiss="alert">x</button>
+				<%= content_tag :div, msg, id: "flash_#{name}" %>
+			</div>
+	  
+		<% end %>
+  -->
+<!-- TODO: from devise, need to figure out how to remove
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+-->
+		<%= yield %>
+	</div>
+	
+	<div class="container" style="padding:20px">
+		<div class="row">
+				<p style="text-align:right">Rhut Vasavada © 2012</p>
+		</div>
+	</div>
 </body>
 </html>
