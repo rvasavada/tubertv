@@ -25,19 +25,11 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
        * Change out the video that is playing
        */
       
-      // Update a particular HTML element with a new value
-      function updateHTML(elmId, value) {
-        document.getElementById(elmId).innerHTML = value;
-      }
-      
       // Loads the selected video into the player.
       function loadVideo() {
         var selectBox = document.getElementById("videoSelection");
         var videoID = selectBox.options[selectBox.selectedIndex].value
-        
-				var videoID = getParam(ytplayer.getVideoUrl(), "v");
-				alert(videoID);
-				
+							
         if(ytplayer) {
           ytplayer.loadVideoById(videoID);
         }
@@ -58,29 +50,13 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
 			function onytplayerStateChange(newState) {
 				if(newState == 0) {
 	        if(ytplayer) {
-						var videoID = getParam(ytplayer.getVideoUrl(), "v");
-						alert(videoID);
-						var results = $.getJSON("/static/next_video?video_id"+ytplayer.getVideoUrl());
 						
-		
-	          ytplayer.loadVideoById("GMUlhuTkM3w");
+						var currentVideoID = ytplayer.getVideoUrl().match(/v=([0-9a-zA-Z]+)/);
+						$.getJSON("/static/next_video.json?video_id="+currentVideoID[1], function(json) {
+						   ytplayer.loadVideoById(json.videos[1].unique_id);
+						});
 	        }
 				}
-			}
-			
-			//get videoID from videoURL
-			function getParam ( url, sname )
-			{
-			  var params = url.search.substr(url.search.indexOf("?")+1);
-			  var sval = "";
-			  params = params.split("&");
-			    // split param and value into individual pieces
-			    for (var i=0; i<params.length; i++)
-			       {
-			         temp = params[i].split("=");
-			         if ( [temp[0]] == sname ) { sval = temp[1]; }
-			       }
-			  return sval;
 			}
       
       // The "main method" of this sample. Called when someone clicks "Run".

@@ -5,9 +5,9 @@ class StaticController < ApplicationController
   end
   
   def next_video
-    #@client = client.videos_by(:query => "penguin")
-    @users = User.all
-    render :json=> @users
-    #User.histories.create!(params[:video_id])      
+    #current_user.histories.create!(:video_id => params[:video_id])      
+    client = YouTubeIt::Client.new
+    @client = client.videos_by(:query => "penguin")
+    render :json=> @client.to_json
   end
 end
