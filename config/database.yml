@@ -39,10 +39,8 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: linkademy_test
+  database: youtube-tv
   pool: 5
-  username: linkademy
-  password:
 
 production:
   adapter: postgresql
