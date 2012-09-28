@@ -12,7 +12,7 @@ class StaticController < ApplicationController
       watched = current_user.histories.select(:video_id).map(&:video_id)
       
       client = YouTubeIt::Client.new
-      @client = client.videos_by(:most_popular, :restriction => "US", :time => "today")
+      @client = client.videos_by(:most_popular, :restriction => "US", :time => :today)
       
       next_video = ""
       @client.videos.each do |video|
