@@ -63,12 +63,14 @@
 
       var videoID = "I-_knXDjWC0"
       // Lets Flash from another domain call JavaScript
-      var params = { allowScriptAccess: "always" };
+      var params = { allowScriptAccess: "always", 
+										 allowFullScreen: "true"
+										};
       // The element id of the Flash embed
       var atts = { id: "ytPlayer" };
       // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
       swfobject.embedSWF("http://www.youtube.com/v/" + videoID + 
-                         "?version=3&autoplay=1&cc_load_policy=1&enablejsapi=1&fs=1&modestbranding=1&rel=0&showinfo=0&autohide=1&color=white&iv_load_policy=3&theme=light&playerapiid=player1", 
+                         "?version=3&enablejsapi=1&playerapiid=player1&autoplay=1&autohide=1&cc_load_policy=1&iv_load_policy=3&rel=0", 
                          "videoDiv", "960", "540", "9", null, null, params, atts);
     }
 
@@ -108,7 +110,7 @@
 	  </div>
 	</div>
 
-	<div class="container" style="padding: 20px 30px 20px 30px;margin-top:20px;opacity: 1.0;background:white;-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);border-radius: 4px;-webkit-border-radius: 4px;box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);">		
+	<div class="container">		
 	 <!-- <% flash.each do |name, msg| %>
 			<div class="alert alert-success">
 		    	<button type="button" class="close" data-dismiss="alert">x</button>
