@@ -1,6 +1,10 @@
 YoutubeTv::Application.routes.draw do
   devise_for :users
 
+  match 'trending' => 'static#trending', :as => :trending
+  match 'popular' => 'static#popular', :as => :terms
+  match 'top_rated' => 'static#top_rated', :as => :top_rated
+
   get "static/home"
   get "static/next_video"
 

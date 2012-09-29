@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>YoutubeTv</title>
+  <title>TuberTV</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -22,16 +22,6 @@
     /*
      * Change out the video that is playing
      */
-    
-    // Loads the selected video into the player.
-    function loadVideo() {
-      var selectBox = document.getElementById("videoSelection");
-      var videoID = selectBox.options[selectBox.selectedIndex].value
-						
-      if(ytplayer) {
-        ytplayer.loadVideoById(videoID);
-      }
-    }
     
     // This function is called when an error is thrown by the player
     function onPlayerError(errorCode) {
@@ -61,7 +51,7 @@
     function loadPlayer() {
       // The video to load
 
-      var videoID = "I-_knXDjWC0"
+      var videoID = "<%= @first_vid %>"
       // Lets Flash from another domain call JavaScript
       var params = { allowScriptAccess: "always", 
 										 allowFullScreen: "true"
@@ -70,8 +60,9 @@
       var atts = { id: "ytPlayer" };
       // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
       swfobject.embedSWF("http://www.youtube.com/v/" + videoID + 
-                         "?version=3&enablejsapi=1&playerapiid=player1&autoplay=1&autohide=1&cc_load_policy=1&iv_load_policy=3&rel=0", 
+                         "?version=3&enablejsapi=1&playerapiid=player1&autoplay=1&autohide=1&cc_load_policy=1&iv_load_policy=3&rel=0&playlist=<%= @playlist %>", 
                          "videoDiv", "960", "540", "9", null, null, params, atts);
+
     }
 
     function _run() {
@@ -84,7 +75,19 @@
 	<div class="navbar navbar-static-top">
 	  <div class="navbar-inner">
 			<div class="container">
-				<%= link_to "YouTubeTV", root_url, :class => "brand"%>
+				<%= link_to "TuberTV", root_url, :class => "brand"%>
+
+				<ul class="nav">
+						<li class=<%= "active" if params[:action] == "trending" && params[:controller] == "static" %>><a href="/trending">Trending</a></li>
+	        	<li class=<%= "active" if params[:action] == "popular" && params[:controller] == "static" %>><a href="/popular">Popular</a></li>
+	        	<li class=<%= "active" if params[:action] == "top" && params[:controller] == "static" %>><a href="/top_rated">Top Rated</a></li>
+	        <!--
+						<%= form_tag '#', :class => "navbar-search pull-left" do %>
+							<%= search_field_tag "query", nil, {:class =>"search-query span3", :placeholder => "Search for jobs",data: {autocomplete_source: '/autocomplete_search' }}%>
+						<% end %>
+					-->
+				</ul>
+
 				
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
@@ -101,9 +104,11 @@
 					  </li>
 	        
 		      <% else %>
-	        	<li><%= link_to "Sign up", new_user_registration_path %></li>				  	
+	        	<!--
+						<li><%= link_to "Sign up", new_user_registration_path %></li>				  	
 						<li class="divider-vertical"></li>
 		        <%= link_to "Sign in", new_user_session_path, :class => "btn btn-primary"%>
+						-->
 		      <% end %>
 				</ul>
 			</div>
