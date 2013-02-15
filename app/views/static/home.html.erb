@@ -2,28 +2,21 @@
 		<div class="jumbotron masthead" style="padding-top:20px">
 			<h1>TuberTV<small>(beta)</small></h1>
 			<p>Add to your channel.  All are based on the US.</p>
-			<script>
-		    // Don't use .toggle, it will be global.
-		    $('.basic').toggle({
-		      onClick: function (event, status) {}, // Do something on status change if you want
-		      text: {
-		        enabled: false, // Change the enabled disabled text on the fly ie: 'ENABLED'
-		        disabled: false // and for 'DISABLED'
-		      },
-		      style: {
-		        enabled: 'primary' // default button styles like btn-primary, btn-info, btn-warning just remove the btn- part.
-		        disabled: false // same goes for this, primary, info, warning, danger, success. 
-		      }
-		    });
-		  </script>
+			
 			<%= form_tag '/popular', :method => :get, :class=>"form-horizontal" do %>
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					  <div class='toggle basic' data-enabled="ON" data-disabled="OFF" data-toggle="toggle">
-					    <input type="checkbox" value="1" name="news" class="checkbox" checked="checked" />
-					    <label class="check" for="myCheckbox"></label>
-					  </div>
+					<label class="checkbox toggle well" onclick="">
+						<input id="view" type="checkbox" checked />
+						<p>
+							Wireless
+							<span>On</span>
+							<span>Off</span>
+						</p>
+
+						<a class="btn btn-primary slide-button"></a>
+					</label>
 		    </div>
 		  </div>
 			<div class="control-group">
