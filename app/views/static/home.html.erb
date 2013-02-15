@@ -6,9 +6,9 @@
 			
 			<%= form_tag({:controller => "static", :action => "popular"}, :method => "get", :class => "form-horizontal") do %>
 			<div class="control-group">
-				<%= label_tag 'news','news',:class=> "control-group"%>
+				<%= label_tag 'news','news',:class=> "control-label"%>
 		    <div class="controls">
-					<span id="news" class="switch">
+					<div id="news" class="switch">
 						<script>
 							$('#news').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
@@ -17,11 +17,11 @@
 							});
 						</script>
 						<%= check_box_tag 'news' %>
-					</span>
+					</div>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'sports','sports', :class=> "control-group"%>
+				<%= label_tag 'sports','sports', :class=> "control-label"%>
 		    <div class="controls">
 					<div id="sports" class="switch" >
 						<script>
@@ -39,7 +39,7 @@
 			<div class="control-group">
 				<%= label_tag 'auto','auto', :class=> "control-group"%>
 		    <div class="controls">
-					<div class="auto" >
+					<div id="auto" class="switch" >
 						<script>
 							$('#auto').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
@@ -50,12 +50,11 @@
 						<%= check_box_tag 'auto' %>
 					</div>
 		    </div>
-		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'music','music', :class=> "control-group"%>
 		    <div class="controls">
-					<div class="music" >
+					<div class="switch" id="music" >
 						<script>
 							$('#music').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
