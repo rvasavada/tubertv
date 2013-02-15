@@ -3,7 +3,7 @@
 			<h1>TuberTV<small>(beta)</small></h1>
 			<p>Pick a channel.  All are based on the US and try not to include vlogs or gaming.  Updates will be frequent!</p>
 			
-			<%= form_tag '/popular', :class=>"form-horizontal" do %>
+			<%= form_tag '/popular', :method => :get, :class=>"form-horizontal" do %>
 			<div class="control-group">
 				<%= label_tag 'news', :class=> "control-group"%>
 		    <div class="controls">
