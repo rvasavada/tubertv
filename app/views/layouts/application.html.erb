@@ -95,9 +95,7 @@
 					<%= link_to "TuberTV", root_url, :class => "brand"%>
 
 					<ul class="nav">
-							<li class=<%= "active" if params[:action] == "trending" && params[:controller] == "static" %>><a href="/trending">Trending</a></li>
 		        	<li class=<%= "active" if params[:action] == "popular" && params[:controller] == "static" %>><a href="/popular">Popular</a></li>
-		        	<li class=<%= "active" if params[:action] == "top" && params[:controller] == "static" %>><a href="/top_rated">Top Rated</a></li>
 		        <!--
 							<%= form_tag '#', :class => "navbar-search pull-left" do %>
 								<%= search_field_tag "query", nil, {:class =>"search-query span3", :placeholder => "Search for jobs",data: {autocomplete_source: '/autocomplete_search' }}%>
