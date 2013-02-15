@@ -75,49 +75,6 @@
 </head>
 <body style="background:white; background-image:url(http://s.ytimg.com/yt/img/refresh/body_noise-vflp89Uii.png);height: 100%;
 " >
-	<div class="navbar navbar-static-top">
-	  <div class="navbar-inner">
-			<div class="container">
-				<%= link_to "TuberTV", root_url, :class => "brand"%>
-
-				<ul class="nav">
-						<li class=<%= "active" if params[:action] == "trending" && params[:controller] == "static" %>><a href="/trending">Trending</a></li>
-	        	<li class=<%= "active" if params[:action] == "popular" && params[:controller] == "static" %>><a href="/popular">Popular</a></li>
-	        	<li class=<%= "active" if params[:action] == "top" && params[:controller] == "static" %>><a href="/top_rated">Top Rated</a></li>
-	        <!--
-						<%= form_tag '#', :class => "navbar-search pull-left" do %>
-							<%= search_field_tag "query", nil, {:class =>"search-query span3", :placeholder => "Search for jobs",data: {autocomplete_source: '/autocomplete_search' }}%>
-						<% end %>
-					-->
-				</ul>
-
-				
-				<ul class="nav pull-right">
-					<% if user_signed_in? %>
-						<li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				          <%= current_user.email%>
-					          <b class="caret"></b>
-					    </a>
-					    <ul class="dropdown-menu">
-				        <li><%= link_to "Watch History", "#" %></li>
-				        <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-				        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
-					    </ul>
-					  </li>
-	        
-		      <% else %>
-	        	<!--
-						<li><%= link_to "Sign up", new_user_registration_path %></li>				  	
-						<li class="divider-vertical"></li>
-		        <%= link_to "Sign in", new_user_session_path, :class => "btn btn-primary"%>
-						-->
-		      <% end %>
-				</ul>
-			</div>
-	  </div>
-	</div>
-
 	 <!-- <% flash.each do |name, msg| %>
 			<div class="alert alert-success">
 		    	<button type="button" class="close" data-dismiss="alert">x</button>
@@ -131,11 +88,50 @@
     <p class="alert"><%= alert %></p>
 -->
 		<%= yield %>
-			
-	<div class="container" style="padding:20px">
-		<div class="row">
-				<p style="text-align:right">Rhut Vasavada © 2012</p>
+
+		<div class="navbar navbar-static-bottom">
+		  <div class="navbar-inner">
+				<div class="container">
+					<%= link_to "TuberTV", root_url, :class => "brand"%>
+
+					<ul class="nav">
+							<li class=<%= "active" if params[:action] == "trending" && params[:controller] == "static" %>><a href="/trending">Trending</a></li>
+		        	<li class=<%= "active" if params[:action] == "popular" && params[:controller] == "static" %>><a href="/popular">Popular</a></li>
+		        	<li class=<%= "active" if params[:action] == "top" && params[:controller] == "static" %>><a href="/top_rated">Top Rated</a></li>
+		        <!--
+							<%= form_tag '#', :class => "navbar-search pull-left" do %>
+								<%= search_field_tag "query", nil, {:class =>"search-query span3", :placeholder => "Search for jobs",data: {autocomplete_source: '/autocomplete_search' }}%>
+							<% end %>
+						-->
+					</ul>
+
+
+					<ul class="nav pull-right">
+						<% if user_signed_in? %>
+							<li class="dropdown">
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					          <%= current_user.email%>
+						          <b class="caret"></b>
+						    </a>
+						    <ul class="dropdown-menu">
+					        <li><%= link_to "Watch History", "#" %></li>
+					        <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+					        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
+						    </ul>
+						  </li>
+
+			      <% else %>
+		        	<!--
+							<li><%= link_to "Sign up", new_user_registration_path %></li>				  	
+							<li class="divider-vertical"></li>
+			        <%= link_to "Sign in", new_user_session_path, :class => "btn btn-primary"%>
+							-->
+			      <% end %>
+					</ul>
+				</div>
+		  </div>
 		</div>
-	</div>
+
+
 </body>
 </html>
