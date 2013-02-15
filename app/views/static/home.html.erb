@@ -3,30 +3,194 @@
 			<h1>TuberTV<small>(beta)</small></h1>
 			<p>Pick a channel.  All are based on the US and try not to include vlogs or gaming.  Updates will be frequent!</p>
 			
-			<%= form_tag '/popular' do %>
-				<%= label_tag 'news'%>
-				<%= range_field_tag 'news', 0, :in => 1...200 %>
-				<%= label_tag 'sports'%>
-				<%= range_field_tag 'sports', 0, :in => 1...200 %>
-				<%= label_tag 'auto'%>
-				<%= range_field_tag 'auto', 0, :in => 1...200 %>
-				<%= label_tag 'music'%>
-				<%= range_field_tag 'music', 0, :in => 1...200 %>
-				<%= label_tag 'animals'%>
-				<%= range_field_tag 'animals', 0, :in => 1...200 %>
-				<%= label_tag 'travel'%>
-				<%= range_field_tag 'travel', 0, :in => 1...200 %>
-				<%= label_tag 'comedy'%>
-				<%= range_field_tag 'comedy', 0, :in => 1...200 %>
-				<%= label_tag 'entertainment'%>
-				<%= range_field_tag 'entertainment', 0, :in => 1...200 %>
-				<%= label_tag 'howto'%>
-				<%= range_field_tag 'howto', 0, :in => 1...200 %>
-				<%= label_tag 'education'%>
-				<%= range_field_tag 'education', 0, :in => 1...200 %>
-				<%= label_tag 'tech'%>
-				<%= range_field_tag 'tech', 0, :in => 1...200 %>
-				<%= submit_tag 'next'%>
+			<%= form_tag '/popular', :class=>"form-horizontal" do %>
+			<div class="control-group">
+				<%= label_tag 'news', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'news', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'news', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'sports', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'news', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'auto', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'music', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'music', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'animals', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'animals', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'travel', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'travel', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'comedy', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'comedy', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'entertainment', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'entertainment', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'howto', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'howto', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'education', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'education', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'tech', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'tech', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'film', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'film', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'games', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'games', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'videoblog', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'videoblog', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'people', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'people', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'nonprofit', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'nonprofit', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'shortmov', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'shortmov', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - anime & animation', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_anime_animation', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - action & adventure', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_action_adventure', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - classics', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_classics', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - comedy', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_comedy', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - documentary', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_documentary', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - drama', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_drama', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - family', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_family', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - foreign', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_foreign', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - horror', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_sci_fi_fantasy', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - thriller', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_thriller', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - shorts', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_shorts', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'movies - shows', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'movies_shows', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+			<div class="control-group">
+				<%= label_tag 'trailers', :class=> "control-group"%>
+		    <div class="controls">
+					<%= range_field_tag 'trailers', 0, :in => 0...1 %>
+		    </div>
+		  </div>
+				<%= submit_tag 'next', :class=>"btn"%>
 			<% end %>
 		</div>
 	</div>
