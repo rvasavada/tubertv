@@ -5,9 +5,10 @@ class StaticController < ApplicationController
   def popular
     unique_ids = []
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
-    categories = []
+    @categories = []
     params.each {|key, value|  categories.push(key) if value == 1 }
-    Rails.logger(categories.inspect)
+    
+    @vids_per_cat = Integer(180 / categories.count)
     #get params that have value 1
     # # of vids per category = divide 180 / # of params that have value 1
     
