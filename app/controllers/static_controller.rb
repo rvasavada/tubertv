@@ -10,7 +10,7 @@ class StaticController < ApplicationController
     params.each {|key, value|  @categories.push(key) if value == "1" }
     
     # # of vids per category = divide 180 / # of params that have value 1
-    @vids_per_cat = 1 #Integer(180 / @categories.count)
+    @vids_per_cat = Integer(180 / @categories.count)
     
     #for loop through each category
     @categories.each do |category|
@@ -21,10 +21,10 @@ class StaticController < ApplicationController
         index += 1
         max_vids -= 25
         
-        feed["feed"]["entry"].each do |video|
-          id = video["id"].match(/videos\/(.+)/)
-          !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-        end
+        #feed["feed"]["entry"].each do |video|
+        #  id = video["id"].match(/videos\/(.+)/)
+        #  !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
+        #end
       end
       #for loop through category to get to # (subtracting 25)    
     end
