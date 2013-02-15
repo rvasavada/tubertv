@@ -7,138 +7,138 @@
 			
 			<%= form_tag({:controller => "static", :action => "popular"}, :method => "get", :class => "form-horizontal") do %>
 			<div class="control-group">
-				<%= label_tag 'news','news',:class=> "control-label"%>
+				<%= label_tag 'News','news',:class=> "control-label"%>
 		    <div class="controls">
-					<div id="news" class="switch">
+					<div id="News" class="switch">
 						<script>
-							$('#news').on('switch-change', function (e, data) {
+							$('#News').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'news' %>
+						<%= check_box_tag 'News' %>
 					</div>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'sports','sports', :class=> "control-label"%>
+				<%= label_tag 'Sports','sports', :class=> "control-label"%>
 		    <div class="controls">
-					<div id="sports" class="switch" >
+					<div id="Sports" class="switch" >
 						<script>
-							$('#sports').on('switch-change', function (e, data) {
+							$('#Sports').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'sports' %>
+						<%= check_box_tag 'Sports' %>
 					</div>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'auto','auto', :class=> "control-label"%>
+				<%= label_tag 'Auto','auto', :class=> "control-label"%>
 		    <div class="controls">
-					<div id="auto" class="switch" >
+					<div id="Auto" class="switch" >
 						<script>
-							$('#auto').on('switch-change', function (e, data) {
+							$('#Auto').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'auto' %>
+						<%= check_box_tag 'Auto' %>
 					</div>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'music','music', :class=> "control-label"%>
+				<%= label_tag 'Music','music', :class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="music" >
+					<div class="switch" id="Music" >
 						<script>
-							$('#music').on('switch-change', function (e, data) {
+							$('#Music').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'music' %>
+						<%= check_box_tag 'Music' %>
 					</div>
 		    </div>		    
 			</div>
 			<div class="control-group">
-				<%= label_tag 'animals','animals',:class=> "control-label"%>
+				<%= label_tag 'Animals','animals',:class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="animals" >
+					<div class="switch" id="Animals" >
 						<script>
-							$('#animals').on('switch-change', function (e, data) {
+							$('#Animals').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'animals' %>
+						<%= check_box_tag 'Animals' %>
 					</div>
 		    </div>		    
 			</div>
 
 			<div class="control-group">
-				<%= label_tag 'travel','travel', :class=> "control-label"%>
+				<%= label_tag 'Travel','travel', :class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="travel" >
+					<div class="switch" id="Travel" >
 						<script>
-							$('#travel').on('switch-change', function (e, data) {
+							$('#Travel').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'travel' %>
+						<%= check_box_tag 'Travel' %>
 					</div>
 			    </div>		    
 			</div>
 			<div class="control-group">
-				<%= label_tag 'comedy','comedy', :class=> "control-label"%>
+				<%= label_tag 'Comedy','comedy', :class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="comedy" >
+					<div class="switch" id="Comedy" >
 						<script>
-							$('#comedy').on('switch-change', function (e, data) {
+							$('#Comedy').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'comedy' %>
+						<%= check_box_tag 'Comedy' %>
 					</div>
 			    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'entertainment','entertainment', :class=> "control-label"%>
+				<%= label_tag 'Entertainment','entertainment', :class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="entertainment" >
+					<div class="switch" id="Entertainment" >
 						<script>
-							$('#entertainment').on('switch-change', function (e, data) {
+							$('#Entertainment').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'entertainment' %>
+						<%= check_box_tag 'Entertainment' %>
 					</div>
 			    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'howto','howto', :class=> "control-label"%>
+				<%= label_tag 'Howto','howto', :class=> "control-label"%>
 		    <div class="controls">
-					<div class="switch" id="howto" >
+					<div class="switch" id="Howto" >
 						<script>
-							$('#howto').on('switch-change', function (e, data) {
+							$('#Howto').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
-						<%= check_box_tag 'howto' %>
+						<%= check_box_tag 'Howto' %>
 					</div>		    
 				</div>
 		  </div>
@@ -450,6 +450,6 @@
 						<%= check_box_tag 'trailers' %>
 					</div>		    </div>
 		  </div>
-				<%= submit_tag 'next', :class=>"btn"%>
+				<%= submit_tag 'next', :class=>"btn btn-large btn-primary pull-right"%>
 			<% end %>
 	</div>
