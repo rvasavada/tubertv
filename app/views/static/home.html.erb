@@ -7,7 +7,7 @@
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					<div class="switch" data-on-label="<i class='icon-ok icon-white'></i>" data-off-label="<i class='icon-remove'></i>">
+					<div class="switch" >
 						<%= check_box_tag 'news' %>
 					</div>
 		    </div>
@@ -15,43 +15,60 @@
 			<div class="control-group">
 				<%= label_tag 'sports','sports', :class=> "control-group"%>
 		    <div class="controls">
+						<div class="switch" >
+							<%= check_box_tag 'sports' %>
+						</div>
+			    </div>
 		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'auto','auto', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'auto', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch" >
+							<%= check_box_tag 'auto' %>
+						</div>
+			    </div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'music','music', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'music', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch" >
+							<%= check_box_tag 'music' %>
+						</div>
+			    </div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'animals','animals',:class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'animals', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch">
+							<%= check_box_tag 'animals' %>
+						</div>
+			    </div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'travel','travel', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'travel', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch" >
+							<%= check_box_tag 'travel' %>
+						</div>
+			    </div>		    
+			</div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'comedy','comedy', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'comedy', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch" >
+							<%= check_box_tag 'comedy' %>
+						</div>
+			    </div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'entertainment','entertainment', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'entertainment', 0, :in => 0...1, :step => 1 %>
-		    </div>
+						<div class="switch" >
+							<%= check_box_tag 'entertainment' %>
+						</div>
+			    </div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'howto','howto', :class=> "control-group"%>
