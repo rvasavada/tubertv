@@ -9,25 +9,6 @@ class StaticController < ApplicationController
     #get params that have value 1
     params.each {|key, value|  @categories.push(key) if value == 1 }
     
-    # # of vids per category = divide 180 / # of params that have value 1
-    @vids_per_cat = Integer(180 / @categories.count)
-    
-    #for loop through each category
-    @categories.each do |category|
-      max_vids = @vids_per_cat 
-      index = 1
-      while max_vids > 0
-        feed = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{index}&max-results=#{max_vids > 25 ? 25 : max_vids }"))
-        index += 1
-        max_vids -= 25
-        
-        feed["feed"]["entry"].each do |video|
-          id = video["id"].match(/videos\/(.+)/)
-          !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-        end
-      end
-      #for loop through category to get to # (subtracting 25)
-
 
 
     end
