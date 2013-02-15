@@ -33,11 +33,10 @@
 						</script>
 						<%= check_box_tag 'sports' %>
 					</div>
-			    </div>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'auto','auto', :class=> "control-group"%>
+				<%= label_tag 'auto','auto', :class=> "control-label"%>
 		    <div class="controls">
 					<div id="auto" class="switch" >
 						<script>
@@ -52,7 +51,7 @@
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'music','music', :class=> "control-group"%>
+				<%= label_tag 'music','music', :class=> "control-label"%>
 		    <div class="controls">
 					<div class="switch" id="music" >
 						<script>
@@ -66,174 +65,210 @@
 					</div>
 		    </div>		    
 			</div>
-		  </div>
 			<div class="control-group">
-				<%= label_tag 'animals','animals',:class=> "control-group"%>
+				<%= label_tag 'animals','animals',:class=> "control-label"%>
 		    <div class="controls">
-						<div class="switch">
-							<%= check_box_tag 'animals' %>
-						</div>
-			    </div>		    </div>
-		  </div>
+					<div class="switch" id="animals" >
+						<script>
+							$('#animals').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'animals' %>
+					</div>
+		    </div>		    
+			</div>
+
 			<div class="control-group">
-				<%= label_tag 'travel','travel', :class=> "control-group"%>
+				<%= label_tag 'travel','travel', :class=> "control-label"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'travel' %>
-						</div>
+					<div class="switch" id="travel" >
+						<script>
+							$('#travel').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'travel' %>
+					</div>
 			    </div>		    
 			</div>
-		  </div>
 			<div class="control-group">
-				<%= label_tag 'comedy','comedy', :class=> "control-group"%>
+				<%= label_tag 'comedy','comedy', :class=> "control-label"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'comedy' %>
-						</div>
-			    </div>		    </div>
+					<div class="switch" id="comedy" >
+						<script>
+							$('#comedy').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'comedy' %>
+					</div>
+			    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'entertainment','entertainment', :class=> "control-group"%>
+				<%= label_tag 'entertainment','entertainment', :class=> "control-label"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'entertainment' %>
-						</div>
-			    </div>		    </div>
+					<div class="switch" id="entertainment" >
+						<script>
+							$('#entertainment').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'entertainment' %>
+					</div>
+			    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'howto','howto', :class=> "control-group"%>
+				<%= label_tag 'howto','howto', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'howto', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="howto" >
+						<script>
+							$('#howto').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'howto' %>
+					</div>		    
+				</div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'education','education', :class=> "control-group"%>
+				<%= label_tag 'education','education', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'education', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'tech','tech', :class=> "control-group"%>
+				<%= label_tag 'tech','tech', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'tech', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'film','film',:class=> "control-group"%>
+				<%= label_tag 'film','film',:class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'film', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'games','games', :class=> "control-group"%>
+				<%= label_tag 'games','games', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'games', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'videoblog','videoblog', :class=> "control-group"%>
+				<%= label_tag 'videoblog','videoblog', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'videoblog', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'people','people', :class=> "control-group"%>
+				<%= label_tag 'people','people', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'people', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'nonprofit', 'nonprofit', :class=> "control-group"%>
+				<%= label_tag 'nonprofit', 'nonprofit', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'nonprofit', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies', 'movies', :class=> "control-group"%>
+				<%= label_tag 'movies', 'movies', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'shortmov', 'shortmov', :class=> "control-group"%>
+				<%= label_tag 'shortmov', 'shortmov', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'shortmov', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_anime_animation','movies - anime & animation', :class=> "control-group"%>
+				<%= label_tag 'movies_anime_animation','movies - anime & animation', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_anime_animation', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_action_adventure', 'movies - action & adventure', :class=> "control-group"%>
+				<%= label_tag 'movies_action_adventure', 'movies - action & adventure', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_action_adventure', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_classics','movies - classics', :class=> "control-group"%>
+				<%= label_tag 'movies_classics','movies - classics', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_classics', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_comedy','movies - comedy', :class=> "control-group"%>
+				<%= label_tag 'movies_comedy','movies - comedy', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_comedy', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_documentary','movies - documentary', :class=> "control-group"%>
+				<%= label_tag 'movies_documentary','movies - documentary', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_documentary', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_drama','movies - drama', :class=> "control-group"%>
+				<%= label_tag 'movies_drama','movies - drama', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_drama', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_family','movies - family', :class=> "control-group"%>
+				<%= label_tag 'movies_family','movies - family', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_family', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_foreign','movies - foreign', :class=> "control-group"%>
+				<%= label_tag 'movies_foreign','movies - foreign', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_foreign', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_sci_fi_fantasy','movies - horror', :class=> "control-group"%>
+				<%= label_tag 'movies_sci_fi_fantasy','movies - horror', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_sci_fi_fantasy', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
- 				<%= label_tag 'movies_thriller','movies - thriller', :class=> "control-group"%>
+ 				<%= label_tag 'movies_thriller','movies - thriller', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_thriller', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_shorts','movies - shorts', :class=> "control-group"%>
+				<%= label_tag 'movies_shorts','movies - shorts', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_shorts', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'movies_shows','movies - shows', :class=> "control-group"%>
+				<%= label_tag 'movies_shows','movies - shows', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'movies_shows', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
-				<%= label_tag 'trailers','trailers', :class=> "control-group"%>
+				<%= label_tag 'trailers','trailers', :class=> "control-label"%>
 		    <div class="controls">
 					<%= range_field_tag 'trailers', 0, :in => 0...1, :step => 1 %>
 		    </div>
