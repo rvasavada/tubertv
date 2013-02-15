@@ -7,7 +7,14 @@
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					<div class="switch" >
+					<div class="news_switch" >
+						<script>
+							$('#news_switch').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
 						<%= check_box_tag 'news' %>
 					</div>
 		    </div>
@@ -15,9 +22,16 @@
 			<div class="control-group">
 				<%= label_tag 'sports','sports', :class=> "control-group"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'sports' %>
-						</div>
+					<span class="sports_switch" >
+						<script>
+							$('#sports_switch').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'sports' %>
+					</span>
 			    </div>
 		    </div>
 		  </div>
