@@ -21,46 +21,6 @@ class StaticController < ApplicationController
       id = video["id"].match(/videos\/(.+)/)
       !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
     end 
-    autos["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    music["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    animals["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    sports["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    travel["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    comedy["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    entertainment["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    howto["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    education["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
-    tech["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end
     
     pre_playlist = unique_ids.uniq.sort_by { rand }
     @first_vid = pre_playlist.pop
