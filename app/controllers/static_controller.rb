@@ -7,7 +7,7 @@ class StaticController < ApplicationController
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
     @categories = []
     #get params that have value 1
-    params.each {|key, value|  @categories.push(key+value) }
+    params.each {|key, value|  @categories.push(key) if value == "1" }
     
     # # of vids per category = divide 180 / # of params that have value 1
     @vids_per_cat = 1 #Integer(180 / @categories.count)
