@@ -3,21 +3,18 @@ class StaticController < ApplicationController
   end
   
   def popular
-    Rails.console.logger.debug(params.has_value?(1));
     unique_ids = []
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
- 
-     news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_News?time=today&start-index=1&max-results=10"))
-     autos = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Autos?time=today&start-index=1&max-results=10"))
-     music = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Music?time=today&start-index=1&max-results=10"))
-     animals = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Animals?time=today&start-index=1&max-results=10"))
-     sports = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Sports?time=today&start-index=1&max-results=10"))
-     travel = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Travel?time=today&start-index=1&max-results=10"))
-     comedy = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Comedy?time=today&start-index=1&max-results=10"))
-     entertainment = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Entertainment?time=today&start-index=1&max-results=10"))
-     howto = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Howto?time=today&start-index=1&max-results=10"))
-     education = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Education?time=today&start-index=1&max-results=10"))
-     tech = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Tech?time=today&start-index=1&max-results=10"))
+    
+    #get params that have value 1
+    
+    # # of vids per category = divide 180 / # of params that have value 1
+    
+    #for loop through each category
+    
+    
+    #for loop through category to get to # (subtracting 25)
+     news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=1&max-results=10"))
  
      
     news["feed"]["entry"].each do |video|
