@@ -8,7 +8,6 @@ class StaticController < ApplicationController
     categories = []
     #get params that have value 1
     params.each {|key, value|  categories.push(key) if value == "1" }
-    @categories = categories
     # # of vids per category = divide 180 / # of params that have value 1
     vids_per_cat = Integer(180 / categories.count)
     
