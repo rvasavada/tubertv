@@ -240,20 +240,6 @@
 						<%= check_box_tag 'Movies' %>
 					</div>		    </div>
 		  </div>
-			<div class="control-group">
-				<%= label_tag 'Shows','Shows', :class=> "control-label"%>
-		    <div class="controls">
-					<div class="switch" id="Shows" >
-						<script>
-							$('#Shows').on('switch-change', function (e, data) {
-							    var $el = $(data.el)
-							      , value = data.value;
-							    console.log(e, $el, value);
-							});
-						</script>
-						<%= check_box_tag 'Shows' %>
-					</div>		    </div>
-		  </div>
 				<%= submit_tag 'next', :class=>"btn btn-large btn-primary pull-right"%>
 			<% end %>
 	</div>
