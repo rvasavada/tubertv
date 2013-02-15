@@ -8,7 +8,7 @@
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					<div class="news" >
+					<span id="news" class="switch">
 						<script>
 							$('#news').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
@@ -17,13 +17,13 @@
 							});
 						</script>
 						<%= check_box_tag 'news' %>
-					</div>
+					</span>
 		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'sports','sports', :class=> "control-group"%>
 		    <div class="controls">
-					<div class="sports" >
+					<div id="sports" class="switch" >
 						<script>
 							$('#sports').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
