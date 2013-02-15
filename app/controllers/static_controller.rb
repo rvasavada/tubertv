@@ -14,12 +14,12 @@ class StaticController < ApplicationController
     
     #for loop through each category
     @categories.each do |category|
-      MAX_VIDS = @vids_per_cat 
+      max_vids = @vids_per_cat 
       INDEX = 1
-      while MAX_VIDS > 0
-        feed = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{INDEX}"))
-        INDEX += 1
-        MAX_VIDS -= 25
+      while max_vids > 0
+        feed = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{index}&max-results=#{max_vids > 25 ? 25 : max_vids }"))
+        index += 1
+        max_vids -= 25
         
         feed["feed"]["entry"].each do |video|
           id = video["id"].match(/videos\/(.+)/)
