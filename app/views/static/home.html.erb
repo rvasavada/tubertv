@@ -1,7 +1,8 @@
 	<div class="container" style="padding: 20px 30px 20px 30px;margin-top:20px;opacity: 1.0;background:white;-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);border-radius: 4px;-webkit-border-radius: 4px;box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2);">
 		<div class="jumbotron masthead" style="padding-top:20px">
 			<h1>TuberTV<small>(beta)</small></h1>
-			<p>Add to your channel.  All are based on the US.</p>
+			<p>Customize your YouTube playlist.</p>
+		</div>
 			
 			
 			<%= form_tag({:controller => "static", :action => "popular"}, :method => "get", :class => "form-horizontal") do %>
@@ -451,5 +452,4 @@
 		  </div>
 				<%= submit_tag 'next', :class=>"btn"%>
 			<% end %>
-		</div>
 	</div>
