@@ -3,13 +3,14 @@
 			<h1>TuberTV<small>(beta)</small></h1>
 			<p>Add to your channel.  All are based on the US.</p>
 			
-			<%= form_tag :action => "popular", :method => :get, :class=>"form-horizontal" do %>
+			
+			<%= form_tag(:controller => "static", :action => "popular", :method => "get", :class => "form-horizontal") do %>
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					<div class="news_switch" >
+					<div class="news" >
 						<script>
-							$('#news_switch').on('switch-change', function (e, data) {
+							$('#news').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
@@ -22,26 +23,34 @@
 			<div class="control-group">
 				<%= label_tag 'sports','sports', :class=> "control-group"%>
 		    <div class="controls">
-					<span class="sports_switch" >
+					<div class="sports" >
 						<script>
-							$('#sports_switch').on('switch-change', function (e, data) {
+							$('#sports').on('switch-change', function (e, data) {
 							    var $el = $(data.el)
 							      , value = data.value;
 							    console.log(e, $el, value);
 							});
 						</script>
 						<%= check_box_tag 'sports' %>
-					</span>
+					</div>
 			    </div>
 		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'auto','auto', :class=> "control-group"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'auto' %>
-						</div>
-			    </div>		    </div>
+					<div class="auto" >
+						<script>
+							$('#auto').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'auto' %>
+					</div>
+		    </div>
+		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'music','music', :class=> "control-group"%>
