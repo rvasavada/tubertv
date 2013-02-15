@@ -88,7 +88,7 @@
     <p class="alert"><%= alert %></p>
 -->
 		<%= yield %>
-
+<!--
 		<div class="navbar navbar-static-bottom">
 		  <div class="navbar-inner">
 				<div class="container">
@@ -96,11 +96,10 @@
 
 					<ul class="nav">
 		        	<li class=<%= "active" if params[:action] == "popular" && params[:controller] == "static" %>><a href="/popular">Popular</a></li>
-		        <!--
 							<%= form_tag '#', :class => "navbar-search pull-left" do %>
 								<%= search_field_tag "query", nil, {:class =>"search-query span3", :placeholder => "Search for jobs",data: {autocomplete_source: '/autocomplete_search' }}%>
 							<% end %>
-						-->
+
 					</ul>
 
 
@@ -129,7 +128,7 @@
 				</div>
 		  </div>
 		</div>
-
+-->
 
 </body>
 </html>
