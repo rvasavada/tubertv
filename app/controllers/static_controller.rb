@@ -6,23 +6,33 @@ class StaticController < ApplicationController
     unique_ids = []
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
     @categories = []
-    params.each {|key, value|  categories.push(key) if value == 1 }
-    
-    @vids_per_cat = Integer(180 / categories.count)
     #get params that have value 1
+    params.each {|key, value|  @categories.push(key) if value == 1 }
+    
     # # of vids per category = divide 180 / # of params that have value 1
+    @vids_per_cat = Integer(180 / @categories.count)
     
     #for loop through each category
+    @categories.each do |category|
+      MAX_VIDS = @vids_per_cat 
+      INDEX = 1
+      while MAX_VIDS > 0
+        feed = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{INDEX}"))
+        INDEX += 1
+        MAX_VIDS -= 25
+        
+        feed["feed"]["entry"].each do |video|
+          id = video["id"].match(/videos\/(.+)/)
+          !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
+        end
+      end
+      #for loop through category to get to # (subtracting 25)
+
+
+
+    end
     
-    
-    #for loop through category to get to # (subtracting 25)
-    news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Movies?time=today&start-index=1&max-results=25"))
- 
-     
-    news["feed"]["entry"].each do |video|
-      id = video["id"].match(/videos\/(.+)/)
-      !unique_ids.include?(id[1]) ? unique_ids.push(id[1]) : 1
-    end 
+
     
     pre_playlist = unique_ids.uniq.sort_by { rand }
     @first_vid = pre_playlist.pop
