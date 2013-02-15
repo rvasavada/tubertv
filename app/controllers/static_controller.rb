@@ -5,7 +5,6 @@ class StaticController < ApplicationController
   def popular
     unique_ids = []
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
-    
  
      news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_News?time=today&start-index=1&max-results=10"))
      autos = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Autos?time=today&start-index=1&max-results=10"))
