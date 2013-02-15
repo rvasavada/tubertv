@@ -1,4 +1,13 @@
+<!-- 
+
 <div id="videoDiv">
 	<div class="jumbotron">
 	</div>
 </div>
+
+-->
+
+<%= form_tag('/posts') do -%>
+	<div><%= range_field_tag('news', value = nil, options = {}) %>
+  <div><%= submit_tag 'Save' %></div>
+<% end -%>
