@@ -4,7 +4,7 @@
 			<p>Add to your channel.  All are based on the US.</p>
 			
 			
-			<%= form_tag(:controller => "static", :action => "popular", :method => "get", :class => "form-horizontal") do %>
+			<%= form_tag({:controller => "static", :action => "popular"}, :method => "get", :class => "form-horizontal") do %>
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
@@ -55,10 +55,18 @@
 			<div class="control-group">
 				<%= label_tag 'music','music', :class=> "control-group"%>
 		    <div class="controls">
-						<div class="switch" >
-							<%= check_box_tag 'music' %>
-						</div>
-			    </div>		    </div>
+					<div class="music" >
+						<script>
+							$('#music').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'music' %>
+					</div>
+		    </div>		    
+			</div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'animals','animals',:class=> "control-group"%>
