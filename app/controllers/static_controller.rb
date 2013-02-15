@@ -7,17 +7,17 @@ class StaticController < ApplicationController
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
     
  
-     news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_News?start-index=1&max-results=10"))
-     autos = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Autos?start-index=1&max-results=10"))
-     music = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Music?start-index=1&max-results=10"))
-     animals = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Animals?start-index=1&max-results=10"))
-     sports = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Sports?start-index=1&max-results=10"))
-     travel = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Travel?start-index=1&max-results=10"))
-     comedy = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Comedy?start-index=1&max-results=10"))
-     entertainment = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Entertainment?start-index=1&max-results=10"))
-     howto = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Howto?start-index=1&max-results=10"))
-     education = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Education?start-index=1&max-results=10"))
-     tech = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Tech?start-index=1&max-results=10"))
+     news = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_News?time=today&start-index=1&max-results=10"))
+     autos = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Autos?time=today&start-index=1&max-results=10"))
+     music = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Music?time=today&start-index=1&max-results=10"))
+     animals = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Animals?time=today&start-index=1&max-results=10"))
+     sports = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Sports?time=today&start-index=1&max-results=10"))
+     travel = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Travel?time=today&start-index=1&max-results=10"))
+     comedy = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Comedy?time=today&start-index=1&max-results=10"))
+     entertainment = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Entertainment?time=today&start-index=1&max-results=10"))
+     howto = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Howto?time=today&start-index=1&max-results=10"))
+     education = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Education?time=today&start-index=1&max-results=10"))
+     tech = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_Tech?time=today&start-index=1&max-results=10"))
  
      
     news["feed"]["entry"].each do |video|
