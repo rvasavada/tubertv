@@ -8,17 +8,22 @@ class StaticController < ApplicationController
     categories = []
     #get params that have value 1
     params.each {|key, value|  categories.push(key) if value == "1" }
-    # # of vids per category = divide 180 / # of params that have value 1
-    vids_per_cat = Integer(180 / categories.count)
-    
     #for loop through each category
     categories.each do |category|
-      max_vids = vids_per_cat 
+      # # of vids per category = divide 180 / # of params that have value 1
+      max_vids = Integer(160 / categories.count)
+      max_vids = 100 if categories.count == 1
+      
       start_index = 1
       while max_vids > 0
+        
         feed = Crack::XML.parse(open("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{start_index}&max-results=#{max_vids > 25 ? 25 : max_vids }"))
+        Rails.logger.debug("https://gdata.youtube.com/feeds/api/standardfeeds/US/most_popular_#{category}?time=today&start-index=#{start_index}&max-results=#{max_vids > 25 ? 25 : max_vids }")
+        
         start_index += 25
         max_vids -= 25
+        
+        #        
         
         feed["feed"]["entry"].each do |video|
           id = video["id"].match(/videos\/(.+)/)
