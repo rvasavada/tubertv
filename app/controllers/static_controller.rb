@@ -3,6 +3,7 @@ class StaticController < ApplicationController
   end
   
   def popular
+    Rails.console.logger.debug(params.has_value?(1));
     unique_ids = []
     client = YouTubeIt::Client.new(:dev_key => "AI39si6oYP4GfE_J0LDuUTwWjA-4CNd1HbantYLBPMNQ7TiSz5jKdnuRC7WtOxahsdLq9JUJWvcpooNB1qxKvvYTWXt9th6dvg")
  

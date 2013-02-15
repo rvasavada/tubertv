@@ -144,134 +144,310 @@
 			<div class="control-group">
 				<%= label_tag 'education','education', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'education', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="education" >
+						<script>
+							$('#education').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'education' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'tech','tech', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'tech', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="tech" >
+						<script>
+							$('#tech').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'tech' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'film','film',:class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'film', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="film" >
+						<script>
+							$('#film').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'film' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'games','games', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'games', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="games" >
+						<script>
+							$('#games').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'games' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'videoblog','videoblog', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'videoblog', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="videoblog" >
+						<script>
+							$('#videoblog').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'videoblog' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'people','people', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'people', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="people" >
+						<script>
+							$('#people').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'people' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'nonprofit', 'nonprofit', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'nonprofit', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="nonprofit" >
+						<script>
+							$('#nonprofit').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'nonprofit' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies', 'movies', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies" >
+						<script>
+							$('#movies').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'shortmov', 'shortmov', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'shortmov', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="shortmov" >
+						<script>
+							$('#shortmov').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'shortmov' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_anime_animation','movies - anime & animation', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_anime_animation', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_anime_animation" >
+						<script>
+							$('#movies_anime_animation').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_anime_animation' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_action_adventure', 'movies - action & adventure', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_action_adventure', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_action_adventure" >
+						<script>
+							$('#movies_action_adventure').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_action_adventure' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_classics','movies - classics', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_classics', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_classics" >
+						<script>
+							$('#movies_classics').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_classics' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_comedy','movies - comedy', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_comedy', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_comedy" >
+						<script>
+							$('#movies_comedy').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_comedy' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_documentary','movies - documentary', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_documentary', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_documentary" >
+						<script>
+							$('#movies_documentary').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_documentary' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_drama','movies - drama', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_drama', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_drama" >
+						<script>
+							$('#movies_drama').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_drama' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_family','movies - family', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_family', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_family" >
+						<script>
+							$('#movies_family').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_family' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_foreign','movies - foreign', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_foreign', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_foreign" >
+						<script>
+							$('#movies_foreign').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_foreign' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_sci_fi_fantasy','movies - horror', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_sci_fi_fantasy', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_sci_fi_fantasy" >
+						<script>
+							$('#movies_sci_fi_fantasy').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_sci_fi_fantasy' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
  				<%= label_tag 'movies_thriller','movies - thriller', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_thriller', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_thriller" >
+						<script>
+							$('#movies_thriller').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_thriller' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_shorts','movies - shorts', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_shorts', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_shorts" >
+						<script>
+							$('#movies_shorts').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_shorts' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'movies_shows','movies - shows', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'movies_shows', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="movies_shows" >
+						<script>
+							$('#movies_shows').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'movies_shows' %>
+					</div>		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'trailers','trailers', :class=> "control-label"%>
 		    <div class="controls">
-					<%= range_field_tag 'trailers', 0, :in => 0...1, :step => 1 %>
-		    </div>
+					<div class="switch" id="trailers" >
+						<script>
+							$('#trailers').on('switch-change', function (e, data) {
+							    var $el = $(data.el)
+							      , value = data.value;
+							    console.log(e, $el, value);
+							});
+						</script>
+						<%= check_box_tag 'trailers' %>
+					</div>		    </div>
 		  </div>
 				<%= submit_tag 'next', :class=>"btn"%>
 			<% end %>
