@@ -3,19 +3,18 @@
 			<h1>TuberTV<small>(beta)</small></h1>
 			<p>Add to your channel.  All are based on the US.</p>
 			
-			<%= form_tag '/popular', :method => :get, :html => {:class=>"form-horizontal"} do %>
+			<%= form_tag :action => "popular", :method => :get, :class=>"form-horizontal" do %>
 			<div class="control-group">
 				<%= label_tag 'news','news',:class=> "control-group"%>
 		    <div class="controls">
-					<div class="switch">
-					    <input type="checkbox">
+					<div class="switch" data-on-label="<i class='icon-ok icon-white'></i>" data-off-label="<i class='icon-remove'></i>">
+						<%= checkbox_tag 'news' %>
 					</div>
 		    </div>
 		  </div>
 			<div class="control-group">
 				<%= label_tag 'sports','sports', :class=> "control-group"%>
 		    <div class="controls">
-					<%= range_field_tag 'sports', 0, :in => 0...1, :step => 1 %>
 		    </div>
 		  </div>
 			<div class="control-group">
